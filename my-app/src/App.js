@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Router>
         <header className='titleheader'>
-          <h1>Pet Supplies</h1>
+          <h1>Barking Boutique</h1>
           <div>
             <button className='login-btn'><Link to="/login">Log in</Link></button>
           </div>
