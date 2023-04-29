@@ -1,0 +1,23 @@
+{
+    "development": {
+      "username": "postgres",
+      "password": "boilerplate",
+      "database": "milestone_project_3",
+      "host": "database-1.cl7hevxpskbr.us-east-1.rds.amazonaws.com",
+      "dialect": "postgres"
+    },
+    "test": {
+        "username": "postgres",
+        "password": "boilerplate",
+        "database": "milestone_project_3_test",
+        "host": "database-1.cl7hevxpskbr.us-east-1.rds.amazonaws.com",
+        "dialect": "postgres"
+    },
+    "production": {
+        "username": "postgres",
+        "password": "boilerplate",
+        "database": "milestone_project_3_production",
+        "host": "database-1.cl7hevxpskbr.us-east-1.rds.amazonaws.com",
+        "dialect": "postgres"
+    }
+  }

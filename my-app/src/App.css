@@ -2,17 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Header CSS */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,44 +14,50 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .titleheader {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: green;
+  color: rgb(0, 0, 0);
   font-size: 35px;
-  background-color: white;
   padding-top: 0px;
+  background-image: url('https://as1.ftcdn.net/v2/jpg/02/00/61/28/1000_F_200612875_OHSktkUfFKKOKVr9IGbcsNUCI3xb2nmG.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+.header {
+  background-image: url('https://as1.ftcdn.net/v2/jpg/02/00/61/28/1000_F_200612875_OHSktkUfFKKOKVr9IGbcsNUCI3xb2nmG.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+.header h1 {
+  background-color: white;
+  border: black;
+  border-style: solid;
+  border-width: 5px;
+}
+
+/* Nav Bar CSS */
 .navbar {
   display: flex;
   align-content: center;
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: rgb(185, 194, 120);
- 
- }
+  background-color: rgba(218, 28, 54, 255);
+  font-size: 20px;
+}
 
 nav li {
   list-style: none;
   display: inline-block;
   margin: 0 20px;
-  
+
 }
 
 nav a {
@@ -71,5 +67,86 @@ nav a {
 }
 
 nav a:hover {
-  color: rgb(255, 0, 0);
+  color: pink;
+}
+
+/* Button CSS */
+
+.logsign-btn {
+  padding: 5px;
+}
+
+.login-btn,
+.login-btn2,
+.signup-btn,
+.add-btn,
+.cart-btn,
+.confirm-btn {
+  background-color: rgba(218, 28, 54, 255);
+  border-radius: 100px;
+  color: white;
+  border-width: 5px;
+  font-size: 20px;
+}
+
+.login-btn a,
+.login-btn2 a,
+.signup-btn a,
+.add-btn a,
+.cart-btn a,
+.confirm-btn a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.login-btn a:hover,
+.login-btn2 a:hover,
+.signup-btn a:hover,
+.add-btn a:hover,
+.cart-btn a:hover,
+.confirm-btn a:hover {
+  color: pink;
+}
+
+.login-btn2:hover,
+.signup-btn:hover {
+  color: pink;
+}
+
+.cart-btn {
+  float: right;
+}
+
+/* Form CSS */
+.loginform,
+.signupform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="password"],
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Image CSS */
+/* https://wagwalking.com/daily/diy-9-neat-ideas-to-turn-your-dogs-dog-treats-into-toys */
+img {
+  height: 300px;
+  width: 450px;
+  border: 5px solid rgba(218, 28, 54, 255);
+  border-radius: 25px;
+}
+
+/* Product Display */
+.prodcutdisplay {
+  background-color: rgba(218, 28, 54, 255);
 }
