@@ -9,7 +9,13 @@ const PORT = process.env.PORT
 const app = express()
 
 const cartController = require('./controllers/cart_controller')
-app.use('/dogs', dogController)
+app.use('/cart', cartController)
+
+const toysController = require('./controllers/toys_controller')
+app.use('/toys', toysController)
+
+const treatsController = require('./controllers/treats_controllers')
+app.use('/treats', treatsController)
 
 // Routes
 app.get('/', (req,res) => {

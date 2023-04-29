@@ -11,18 +11,40 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Dog_treats.belongsToMany(Cart, {foreignKey: 'barcode'})
     }
   }
-  Dog_treats.init({
-    barcode: DataTypes.INTEGER,
-    name: DataTypes.STRING,
-    brand: DataTypes.STRING,
-    weight: DataTypes.INTEGER,
-    price: DataTypes.INTEGER,
-    image: DataTypes.STRING
+  Dog_treats.init(
+    {
+      barcode: {
+        type: DataTypes.Integer,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      brand: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      weight: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      price:{
+        type: DataTypes.INTEGER,
+        allowNullP: false  
+      },
+      image: {
+        type: DataTypes.STRING,
+      }
   }, {
     sequelize,
     modelName: 'Dog_treats',
+    tableName: 'dog_treats',
+    timestamps: false
   });
   return Dog_treats;
 };

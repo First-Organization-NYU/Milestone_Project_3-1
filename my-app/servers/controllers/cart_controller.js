@@ -6,7 +6,7 @@ const {Op} = require("sequelize")
 // Get All Cart Items
 cartItems.get('/', async(req, res) => {
     try {
-        const foundCartItems = await Cart.finadAll(
+        const foundCartItems = await Cart.findAll(
             {
                 where: {
                     name: {[Op.like]: `%${req.query.name ? req.query.name: ''}%`}
@@ -20,11 +20,11 @@ cartItems.get('/', async(req, res) => {
 })
 
 // Get a Cart Item
-cartItems.get('/barcode', async(req,res) => {
+cartItems.get('/carItem_id', async(req,res) => {
     try{
         const foundCartItem = await Cart.findOne(
             {
-                where: {dog_barcode: req.params.barcode}
+                where: {cartItem_id: req.params.barcode}
             })
             console.log(foundCartItem.dataValues)
             res.status(200).json(foundCartItem.dataValues)
@@ -34,11 +34,35 @@ cartItems.get('/barcode', async(req,res) => {
 })
 
 // Create a Cart Item
-
+cartItems.post('/', async(req,res) => {
+    try{
+        const newCartItem = await Cart.Create(req.body)
+        res.status(200).json({
+            message: `Successfully added ${newCartItem} to your cart.`,
+            data: newCartItem
+        })
+    }catch(error){
+        res.status(500).json(error)
+    }
+})
 
 
 // Edit A Cart Item
 
 
 
-// Delete a Cart Item - changing 
+// Delete a Cart Item 
+cartItems.delete('/:cartItem_id', async(req,res) => {
+    try{
+        const deletedCartItem = await Cart.destory({
+            where: {
+                cartItem_id: req.params.id
+            }
+        })
+        res.status(200).json({
+            message: `Successfully deleted ${deletedCartItem} from your cart.`
+        })
+    }catch(error){
+        res.status(500).json(error)
+    }
+})

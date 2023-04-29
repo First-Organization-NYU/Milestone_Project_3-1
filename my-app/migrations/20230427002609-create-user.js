@@ -5,7 +5,6 @@ module.exports = {
     await queryInterface.createTable('users_table', {
       email: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.STRING
       },
@@ -19,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       role: {
-        type: Sequelize.ENUM
+        type: Sequelize.STRING
       },
     });
   },

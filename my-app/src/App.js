@@ -17,16 +17,16 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <header className='titleheader'>
-          <h1>Barking Boutique</h1>
-          <div>
-            <button className='login-btn'><Link to="/login">Log in</Link></button>
-          </div>
-          <div>
-            <button className='signup-btn'><Link to="/signup">Sign up</Link></button>
-          </div>
-          <div>
-            <button className='cart-btn'><Link to="/cart">Shopping Cart</Link></button>
+        <header>
+          <div className='header'>
+            <div className='titleheader'>
+              <h1>Barking Boutique</h1>
+            </div>
+            <div className='logsign-btn'>
+              <button className='login-btn'><Link to="/login">Log in</Link></button>
+              <button className='signup-btn'><Link to="/signup">Sign up</Link></button>
+              <button className='cart-btn'><Link to="/cart">Shopping Cart</Link></button>
+            </div>
           </div>
         </header>
 
