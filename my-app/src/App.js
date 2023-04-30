@@ -2,10 +2,10 @@ import './App.css';
 import About from './components/About';
 import Cart from './components/Cart';
 import Home from './components/Home';
-import Login from './components/Login';
+import LoginForm from './components/LoginForm';
 import Movies from './components/Movies';
 import Payment from './components/Payment'
-import Signup from './components/Signup'
+import SignUpForm from './components/SignUpForm'
 import Toys from './components/Toys'
 import Treats from './components/Treats'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
@@ -48,8 +48,8 @@ function App() {
             <Route path="/toys" element={<Toys />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/about" element={<About />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUpForm />} />
+            <Route path="/login" element={<LoginForm />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/confirmation" element={<Confirmation />} />
