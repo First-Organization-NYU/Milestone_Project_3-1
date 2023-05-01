@@ -14,7 +14,7 @@ function Cart() {
         fetchData();
     }, []);
 
-    const handleDelete = async(id) => {
+    const handleDelete = async(cartItem_id) => {
         try{
             const response = await axios.delete(`http://localhost:3002/cart/${cartItem_id}`)
         }catch(error){
@@ -36,7 +36,7 @@ function Cart() {
             </div>
             
 
-            {/* {data.map((cartItems) => (
+            {data.map((cartItems) => (
         <div className="cartDisplay" key={cart.barcode}>
           <ul>
             <li>{cart.image}</li>
@@ -44,7 +44,7 @@ function Cart() {
             <li>{cart.price}</li>
             </ul>
         </div>
-      ))} */}
+      ))}
             <button className="cart-btn"><Link to="/payment">Proceed to Checkout</Link></button>
 </div>)
 }

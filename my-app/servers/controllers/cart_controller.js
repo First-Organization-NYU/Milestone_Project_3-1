@@ -7,11 +7,11 @@ const {Op} = require("sequelize")
 cartItems.get('/', async(req, res) => {
     try {
         const foundCartItems = await Cart.findAll(
-            {
-                where: {
-                    name: {[Op.like]: `%${req.query.name ? req.query.name: ''}%`}
-                }
-            }
+            // {
+            //     where: {
+            //         name: {[Op.like]: `%${req.query.name ? req.query.name: ''}%`}
+            //     }
+            // }
         )
         res.status(200).json(foundCartItems)
     } catch (error) {
@@ -20,7 +20,7 @@ cartItems.get('/', async(req, res) => {
 })
 
 // Get a Cart Item
-cartItems.get('/carItem_id', async(req,res) => {
+cartItems.get('/cartItem_id', async(req,res) => {
     try{
         const foundCartItem = await Cart.findOne(
             {
@@ -66,3 +66,5 @@ cartItems.delete('/:cartItem_id', async(req,res) => {
         res.status(500).json(error)
     }
 })
+
+module.exports = cartItems

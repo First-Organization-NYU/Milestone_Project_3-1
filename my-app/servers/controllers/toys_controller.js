@@ -4,14 +4,18 @@ const {Dog_toys} = db
 const {Op} = require('sequelize')
 
 toys.get('/', async (req,res) => {
-    // try{
-    //     const foundToys = await toys.findAll(
-    //         {
-    //             where: 
-    //         }
-    //     )
-
-    // }catch(error){
-    //     res.status(500).json(error)
-    // }
+    try{
+        console.log('Attempting')
+        const foundToys = await Dog_toys.findAll()
+            // {
+            //     where: {
+            //         name: {[Op.like]: `${req.query.name ? req.query.name : ''}%`}
+            //     }
+            // }
+        res.status(200).json(foundToys)
+    }catch(error){
+        res.status(500).json(error)
+    }
 })
+
+module.exports = toys;

@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const { default: Cart } = require('../src/components/Cart');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -10,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
+    static associate({Cart}) {
       // define association here
-      User.hasMany(Cart, {foreignKey: 'barcode'})
+      // User.hasMany(Cart, {foreignKey: 'barcode'})
     }
   }
   User.init(
@@ -33,13 +32,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-      role: {
-        type: DataTypes.ENUM
-      }
+      // role: {
+      //   type: DataTypes.ENUM
+      // }
   }, {
     sequelize,
-    modelName: 'User',
-    tableName: 'user',
+    modelName: "User",
+    tableName: "users_table",
     timestamps: false
   });
   return User;

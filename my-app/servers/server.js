@@ -8,14 +8,24 @@ require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
 
-const cartController = require('./controllers/cart_controller')
-app.use('/cart', cartController)
+// Middleware
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(cors());
+app.use(bodyParser.json())
+
+// Routes
+
+// const cartController = require('./controllers/cart_controller')
+// app.use('/cart', cartController)
 
 const toysController = require('./controllers/toys_controller')
 app.use('/toys', toysController)
 
-const treatsController = require('./controllers/treats_controllers')
+const treatsController = require('./controllers/treats_controller')
 app.use('/treats', treatsController)
+
+const cartController = require('./controllers/treats_controller')
+app.use('/cart', cartController)
 
 // Routes
 app.get('/', (req,res) => {
@@ -28,6 +38,6 @@ app.get('*', (req,res) => {
 })
 
 // Listen
-app.listen(PORT, () => {
-    console.log('listening on port', PORT)
+app.listen(3002, () => {
+    console.log('listening on port', 3002)
 })

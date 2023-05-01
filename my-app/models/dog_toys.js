@@ -11,15 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Dog_toys.belongsToMany(Cart, {foreignKey: 'barcode'})
+      // Dog_toys.belongsToMany(models.Cart, {foreignKey: 'barcode'})
     }
   }
   Dog_toys.init(
     {
       barcode:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true,
-        autoIncrement: true
       },
       name: {
         type: DataTypes.STRING,
@@ -30,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       price:{
-        type: DataTypes.SRING,
+        type: DataTypes.INTEGER,
         allowNull: false
       },
       image: {
@@ -39,9 +38,9 @@ module.exports = (sequelize, DataTypes) => {
       }
   }, {
     sequelize,
-    modelName: 'Dog_toys',
-    tableName: 'dog_toys',
-    timeStamps: false
+    modelName: "Dog_toys",
+    tableName: "dog_toys",
+    timestamps: false
   });
   return Dog_toys;
 };

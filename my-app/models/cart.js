@@ -1,3 +1,5 @@
+
+
 'use strict';
 const {
   Model
@@ -9,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
+    static associate({Dog_toys}) {
       // define association here
-      Cart.belongsToMany(Dog_toys, {foreignKey: 'barcode'});
-      Cart.belongsToMany(Dog_treats, {foreignKey: 'barcode'});
-      Cart.belongsTo(User, {foreignKey: 'email'})
+      Cart.hasMany(Dog_toys, {foreignKey: 'barcode'});
+      // Cart.belongsToMany(Dog_treats, {foreignKey: 'barcode'});
+      // Cart.belongsTo(User, {foreignKey: 'email'})
     }
   }
   Cart.init({
@@ -38,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     sequelize,
     modelName: 'Cart',
-    tableName: "cart",
+    tableName: "Carts",
     timestamps: false
   });
   return Cart;
