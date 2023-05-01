@@ -80,7 +80,7 @@ function LoginForm() {
     
 
 
-        const response = await fetch(`../controllers/authentication/`, {
+        const response = await fetch(`/authentication`, {
             method: 'POST',
             credentials: "include",
             headers: {
