@@ -151,7 +151,7 @@ img {
   background-color: rgba(218, 28, 54, 255);
 }
 
-.toyDisplay, .productDisplay{
+.toyDisplay, .productDisplay, .treatDisplay{
   background-color: whitesmoke;
   border-style: solid;
   border-color: rgb(188, 35, 35);
@@ -165,7 +165,7 @@ img {
   border-radius: 30px;
 }
 
-.toyContent {
+.toyContent, .treatContent {
   display: flex;
   flex-wrap: wrap;
   padding: 2 em;

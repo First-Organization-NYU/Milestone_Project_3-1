@@ -1,49 +1,41 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Toys() {
   //fetch data from dog_toys table & display it
-  const [data,setData] = useState([]);
+  const [data, setData] = useState([]);
 
-  useEffect(()=> {
+  useEffect(() => {
     const fetchData = async () => {
       const result = await axios("http://localhost:3002/toys");
       setData(result.data)
     }
     fetchData()
-  },[])
+  }, [])
 
   return (
-   
-
     <div className="toysPage">
       <h1>Shop For Dog Toys</h1>
       <div className="toyContent">
-        {data.map((toys)=>{
-          return(
-       
-
-              <div className="toyDisplay" key={toys.barcode}>
+        {data.map((toys) => {
+          return (
+            <div className="toyDisplay" key={toys.barcode}>
               <div>
-                <h3><u>toy name: {toys.name}</u></h3>
-                <p>toy price: {toys.price}</p>
-                <p>toy image: {toys.image}</p>
+                <h3><u>{toys.name}</u></h3>
+                <h4>{toys.brand}</h4>
+                <img src={toys.image} alt="Dog Treats"></img>
+                <h5>Price: ${toys.price}</h5>
               </div>
               <div>
-                <button class='addToCartButton'>Add to Cart</button>
+                <button class='add-btn'>Add</button>
               </div>
-              </div>
-    
-            
+            </div>
           )
         }
         )}
       </div>
-
-      <button className="add-btn">Add</button>
-      <br></br>
     </div>
   );
 }

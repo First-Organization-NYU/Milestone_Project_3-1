@@ -37,7 +37,7 @@ function App() {
             <li><Link to="/toys">Toys</Link></li>
             <li><Link to="/movies">Movies</Link></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><a href='https://pet-adoption-rouge.vercel.app/'>Pet Adoption</a></li>
+            <li><a href='https://pet-adoption-umzw.vercel.app/'>Pet Adoption</a></li>
           </ul>
         </nav>
 
