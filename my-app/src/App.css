@@ -177,4 +177,5 @@ img {
 .addToCartButton{
   background-color: rgb(211, 145, 145);
   border-radius: 10px;
+  font-weight:bold
 }

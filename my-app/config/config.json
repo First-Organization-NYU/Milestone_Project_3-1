@@ -1,21 +1,21 @@
   {
     "development": {
       "username": "postgres",
-      "password": "Barakat",
+      "password": "admin",
       "database": "milestone_project_3",
       "host": "127.0.0.1",
       "dialect": "postgres"
     },
     "test": {
       "username": "postgres",
-      "password": "Barakat",
+      "password": "admin",
       "database": "milestone_project_3_test",
       "host": "127.0.0.1",
       "dialect": "postgres"
     },
     "production": {
       "username": "postgres",
-      "password": "Barakat",
+      "password": "admin",
       "database": "milestone_project_3_production",
       "host": "127.0.0.1",
       "dialect": "postgres"

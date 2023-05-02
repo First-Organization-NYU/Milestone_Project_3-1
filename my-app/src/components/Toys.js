@@ -13,9 +13,10 @@ function Toys() {
       setData(result.data)
     }
     fetchData()
-  }, [])
-
+  },[])
+  
   return (
+   
     <div className="toysPage">
       <h1>Shop For Dog Toys</h1>
       <div className="toyContent">
@@ -29,7 +30,7 @@ function Toys() {
                 <h5>Price: ${toys.price}</h5>
               </div>
               <div>
-                <button class='add-btn'>Add</button>
+                <button id='addToCart' className='addToCartButton' >Add to Cart</button>
               </div>
             </div>
           )
