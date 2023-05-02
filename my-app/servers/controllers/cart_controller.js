@@ -1,18 +1,17 @@
-const cartItems = require('express').Router()
+const cart = require('express').Router()
 const db = require('../../models')
 const {Cart} = db
 const {Op} = require("sequelize")
 
 // Get All Cart Items
-cartItems.get('/', async(req, res) => {
+cart.get('/', async(req, res) => {
     try {
-        const foundCartItems = await Cart.findAll(
+        const foundCartItems = await Cart.findAll()
             // {
             //     where: {
             //         name: {[Op.like]: `%${req.query.name ? req.query.name: ''}%`}
             //     }
             // }
-        )
         res.status(200).json(foundCartItems)
     } catch (error) {
         res.status(500).json(error)
@@ -20,7 +19,7 @@ cartItems.get('/', async(req, res) => {
 })
 
 // Get a Cart Item
-cartItems.get('/cartItem_id', async(req,res) => {
+cart.get('/cartItem_id', async(req,res) => {
     try{
         const foundCartItem = await Cart.findOne(
             {
@@ -34,7 +33,7 @@ cartItems.get('/cartItem_id', async(req,res) => {
 })
 
 // Create a Cart Item
-cartItems.post('/', async(req,res) => {
+cart.post('/', async(req,res) => {
     try{
         const newCartItem = await Cart.Create(req.body)
         res.status(200).json({
@@ -52,7 +51,7 @@ cartItems.post('/', async(req,res) => {
 
 
 // Delete a Cart Item 
-cartItems.delete('/:cartItem_id', async(req,res) => {
+cart.delete('/:cartItem_id', async(req,res) => {
     try{
         const deletedCartItem = await Cart.destory({
             where: {
@@ -67,4 +66,4 @@ cartItems.delete('/:cartItem_id', async(req,res) => {
     }
 })
 
-module.exports = cartItems
+module.exports = cart

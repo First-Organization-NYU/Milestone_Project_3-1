@@ -24,7 +24,7 @@ app.use('/toys', toysController)
 const treatsController = require('./controllers/treats_controller')
 app.use('/treats', treatsController)
 
-const cartController = require('./controllers/treats_controller')
+const cartController = require('./controllers/cart_controller')
 app.use('/cart', cartController)
 
 // Routes
