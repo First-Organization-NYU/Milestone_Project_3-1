@@ -1,6 +1,6 @@
 function Signup() {
     // Add user data to Users table
-
+    
     return (
         <div>
             <div className="signUpPage">
