@@ -44,7 +44,7 @@ function Dog() {
                             )}
 
                             <div>
-                                <ul>
+                                <ul className="dogbreed-list">
                                     <li>
                                         <span>Bred For:</span>{" "}
                                         {item.bred_for}

@@ -180,3 +180,11 @@ img {
   border-radius: 10px;
   font-weight:bold
 }
+
+.single-dog-data-item-img{
+  margin-top: 1%;
+}
+
+.dogbreed-list{
+  list-style-type: none;
+}
