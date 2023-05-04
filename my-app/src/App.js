@@ -2,22 +2,24 @@ import './App.css';
 import About from './components/About';
 import Cart from './components/Cart';
 import Home from './components/Home';
-import Login from './components/Login';
 import DogBreeds from './components/DogBreeds';
 import Dog from './components/Dog';
 import Payment from './components/Payment'
-import Signup from './components/Signup'
+import SignupForm from './components/SignUpForm'
 import Toys from './components/Toys'
 import Treats from './components/Treats'
 import { BrowserRouter as Router, Route, Link, Routes, BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import Confirmation from './components/Confirmation';
+import LoginForm from './components/LoginForm';
+import CurrentUserProvider from './context/CurrentUser.js'
 
 
 
 function App() {
   return (
     <div className="App">
+      <CurrentUserProvider>
       <BrowserRouter>
         <header>
           <div className='header'>
@@ -51,8 +53,8 @@ function App() {
               <Route path="/dogbreeds" element={<DogBreeds />} />
               <Route path="/:name" element={<Dog />} />
               <Route path="/about" element={<About />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignupForm />} />
+              <Route path="/login" element={<LoginForm />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/payment" element={<Payment />} />
               <Route path="/confirmation" element={<Confirmation />} />
@@ -60,7 +62,7 @@ function App() {
         </div>
 
       </BrowserRouter>
-
+      </CurrentUserProvider>
     </div>
   );
 
