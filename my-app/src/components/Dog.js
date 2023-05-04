@@ -24,7 +24,7 @@ function Dog() {
     return (
         <>
         <div className="single-dog-data">
-            {dog.map((item) => (
+            {dog && dog.map((item) => (
 
                 <div className="single-dog-data-item"
                 key={item.id}>
