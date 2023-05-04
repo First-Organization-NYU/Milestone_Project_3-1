@@ -50,7 +50,7 @@ The Barking Boutique Ecommerce Store has the following features:
 | GET | '/' | Homepage |
 | GET | '/toys' | Lists all the Dog Toys |
 | GET | '/treats' | Lists all the Dog Treats |
-| GET | '/dogbreeds' | Lists all the Pet Movies |
+| GET | '/dogbreeds' | Lists all the different Pet Breeds from the Dop API |
 | GET | '/:name' | Displays a Single Dog from a dog API |
 | GET | '/about' | Displays what the website is About |
 | GET | '/signup | Displays a sign up form |
