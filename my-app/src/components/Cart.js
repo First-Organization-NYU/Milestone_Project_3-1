@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+// import constate from "constate";
 
 function Cart() {
 
@@ -36,7 +37,7 @@ function Cart() {
             </div>
             
 
-            {data.map((cartItems) => (
+            {/* {data.map((cartItems) => (
         <div className="cartDisplay" key={cart.barcode}>
           <ul>
             <li>{cart.image}</li>
@@ -44,7 +45,8 @@ function Cart() {
             <li>{cart.price}</li>
             </ul>
         </div>
-      ))}
+      )
+      )} */}
             <button className="cart-btn"><Link to="/payment">Proceed to Checkout</Link></button>
 </div>)
 }
