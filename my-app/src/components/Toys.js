@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import {CartContext} from '../context/CartContext'
 
 function Toys() {
+
+  const cart = useContext(CartContext)
+
   //fetch data from dog_toys table & display it
   const [data, setData] = useState([]);
 
@@ -15,9 +18,27 @@ function Toys() {
     fetchData()
   },[])
   
+
+  const [data2, setData2] = useState([]);
+
+  useEffect(() => {
+    const fetchData2 = async(barcode) => {
+      const result2 = await axios("http://localhost:3002/toys");
+      setData2(data.filter((toys) => toys.barcode === barcode))
+    }
+  })
+
+  const handleAddToCart = async(item) => {
+    try{
+        const response = await axios.post(`http://localhost:3002/cart`)
+    }catch(error){
+        console.log(`Error Message is: ${error}`)
+    }
+}
+
   return (
-   
-    <div className="toysPage">
+   <CartContext.Provider>
+        <div className="toysPage">
       <h1>Shop For Dog Toys</h1>
       <div className="toyContent">
         {data.map((toys) => {
@@ -30,7 +51,7 @@ function Toys() {
                 <h5>Price: ${toys.price}</h5>
               </div>
               <div>
-                <button id='addToCart' className='addToCartButton' >Add to Cart</button>
+                <button id='addToCart' className='addToCartButton' onClick={() => {handleAddToCart(toys)}} >Add to Cart</button>
               </div>
             </div>
           )
@@ -38,6 +59,8 @@ function Toys() {
         )}
       </div>
     </div>
+   </CartContext.Provider>
+
   );
 }
 
